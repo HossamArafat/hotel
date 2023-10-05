@@ -1,0 +1,450 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: #2c3855;
+  --main-color-dark: #435681;
+  --text-dark: #000;
+  --text-light: #767268;
+  --high-light: #f3f4f6;
+  --white: #fff;
+}
+
+/* Start_Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  position: relative;
+}
+header h1 {
+  font-size: 30px;
+}
+header ul {
+  display: flex;
+}
+
+header ul li {
+  margin-right: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+header ul li:hover {
+  color: #04113a;
+}
+header .toggle {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+  header .toggle {
+    display: block;
+  }
+
+  header .toggle:hover + ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  header ul li {
+    padding: 22px;
+    color: var(--white);
+  }
+}
+/* End_Header */
+
+/* Start_Home */
+main .home {
+  width: 90%;
+  height: 100vh;
+  margin: 30px auto;
+  border-radius: 18px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url(images/background/landing.jpg);
+  background-size: cover;
+  position: relative;
+}
+main .home .info {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  color: var(--white);
+}
+
+main .home .info h2 {
+  font-size: 60px;
+}
+main .home .info p {
+  margin-top: 10px;
+}
+main .home .book {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffffb3;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 30px;
+  border-radius: 15px;
+}
+main .home .book .part {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+main .home .book .part input {
+  background: transparent;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  position: relative;
+}
+main .home .book .part label {
+  position: absolute;
+  color: var(--text-dark);
+  font-size: 19px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+main .home .book .part input:focus + label {
+  top: 20px;
+  font-size: 13px;
+}
+main .home .book .part div {
+  padding-top: 5px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+main .home .book .search {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--main-color);
+  cursor: pointer;
+  transition: 0.4s;
+}
+main .home .book .search:hover {
+  background-color: var(--main-color-dark);
+}
+@media (max-width: 768px) {
+  main .home .info {
+    width: 80%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .home .info h2 {
+    font-size: 50px;
+  }
+  main .home .book {
+    flex-direction: column;
+  }
+  main .home .book .part {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+/* End_Home */
+
+/* Start_Hotels */
+.hotels {
+  margin: 80px;
+}
+.hotels h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  padding: 30px;
+}
+.hotel-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+.hotel-content .card {
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: 0.4s;
+}
+.hotel-content .card:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.hotel-content .card img {
+  width: 100%;
+}
+.hotel-content .card .details {
+  padding: 10px;
+}
+.hotel-content .card .details h3 {
+  display: flex;
+  justify-content: space-between;
+}
+/*  End_hotels */
+
+/*Start_Review */
+.review {
+  margin: 50px 0;
+  padding: 25px;
+  background-color: var(--high-light);
+}
+.review h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  padding: 30px;
+}
+.review-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+}
+.review-content .card {
+  width: 100%;
+  height: 200px;
+  padding: 35px;
+  margin-top: 40px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  background-color: var(--white);
+  position: relative;
+}
+.review-content .card .photo {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: 2px solid white;
+  outline: 5px solid #f3f4f6;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.review-content .card .photo:hover {
+  top: -50%;
+}
+.review-content .card img {
+  width: 100%;
+}
+.review-content .card p {
+  font-size: 20px;
+  padding-top: 40px;
+}
+@media (max-width: 600px) {
+  .review-content .card p {
+    font-size: 18px;
+  }
+}
+/*End_Review */
+
+/* Start_Join */
+.join {
+  width: 90%;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.join p {
+  width: 60%;
+  font-size: 45px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+.join p span {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+.join .btn {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-top: 25px;
+  border: 3px solid #04113a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  position: relative;
+}
+.join .btn:hover {
+  background-color: #0aacbe;
+  letter-spacing: 2px;
+  box-shadow: 0 0 11px #0aacbe;
+}
+.join .btn::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+.join .btn span {
+  position: relative;
+  z-index: 1;
+}
+.join .btn i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.join .btn i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 10px;
+  height: 4px;
+  background: #27282c;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+.join .btn:hover i::before {
+  width: 20px;
+  left: 20%;
+}
+.join .btn i::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 10px;
+  height: 4px;
+  background: #27282c;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+.join .btn:hover i::after {
+  width: 20px;
+  left: 80%;
+}
+/* End_Join */
+
+/* Start_Footer */
+footer {
+  display: flex;
+  background-color: var(--high-light);
+  padding: 20px 70px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer h4 {
+  padding: 20px;
+  padding-left: 0;
+  font-size: 28px;
+}
+footer .wdm {
+  width: 30%;
+}
+footer .wdm p {
+  color: var(--text-light);
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  transition: 0.4s;
+}
+footer .wdm p:hover {
+  color: var(--text-dark);
+}
+footer h4 ~ div {
+  color: var(--text-light);
+  font-size: 18px;
+  padding: 7px;
+  padding-left: 0;
+}
+footer h4 ~ div:hover {
+  color: var(--text-dark);
+}
+footer .copyright {
+  width: 100%;
+  margin-top: 30px;
+  text-align: right;
+}
+footer .copyright p {
+  position: relative;
+  font-size: 18px;
+}
+footer .copyright p::before {
+  content: "";
+  width: 300px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translateX(-50%);
+}
+@media (max-width: 992px) {
+  footer {
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+  }
+  footer h4 {
+    text-align: center;
+  }
+  footer .wdm {
+    width: 100%;
+    text-align: center;
+  }
+  footer h4 ~ div {
+    text-align: center;
+  }
+  footer .copyright p::before {
+    display: none;
+  }
+  footer .copyright {
+    text-align: center;
+  }
+  footer .copyright p {
+    color: var(--text-light);
+  }
+}
+@media (max-width: 1300px) {
+  footer .copyright p::before {
+    left: 25%;
+  }
+}
+/* End_Footer */
+
+/* 
+  768px ==> small screens
+  992px ==> medium screens
+  1200px ==> large screens
+  Otherwise ==> custom screens
+*/
